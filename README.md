@@ -1,21 +1,19 @@
-# travel
+# Travel（去哪儿）
 
-> A Vue.js project
+> 通过 Vue 全家桶构建
 
-## Build Setup
+## 编译设置
 
 ``` bash
-# install dependencies
+# 初始化
 npm install
 
-# serve with hot reload at localhost:8080
+# 启动项目
 npm run dev
 
-# build for production with minification
+# 生产环境
 npm run build
 
-# build for production and view the bundle analyzer report
+# 生成报告
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
