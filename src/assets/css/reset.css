@@ -120,3 +120,11 @@ a {
   color: #25a4bb;
   text-decoration: none;
 }
+
+/*fastclick无法阻止被动事件监听器*/
+/*
+ Error：[Intervention] Unable to preventDefault inside passive event listener due to target being treated as passive
+*/
+* {
+  touch-action: none;
+}

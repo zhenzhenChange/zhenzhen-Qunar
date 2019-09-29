@@ -1,12 +1,17 @@
 <template>
   <div id="app">
-    Hello Word!
+    <Home/>
   </div>
 </template>
 
 <script>
+import Home from './views/home/Home'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Home
+  }
 }
 </script>
 
