@@ -3,6 +3,8 @@
     <home-header/>
     <home-swiper/>
     <home-section/>
+    <home-hot/>
+    <home-weekend/>
   </div>
 </template>
 
@@ -10,13 +12,17 @@
 import HomeHeader from './components/Header'
 import HomeSwiper from './components/Swiper'
 import HomeSection from './components/Section'
+import HomeHot from './components/Hot'
+import HomeWeekend from './components/Weekend'
 
 export default {
   name: 'Home',
   components: {
     HomeHeader,
     HomeSwiper,
-    HomeSection
+    HomeSection,
+    HomeHot,
+    HomeWeekend
   }
 }
 </script>
