@@ -2,27 +2,11 @@
   <div>
     <div class="title">热门推荐</div>
     <ul>
-      <li class="item">
-        <img src="https://imgs.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_200x200_2cce447f.jpg" alt="">
+      <li class="item" v-for="item of hotList" :key="item.id">
+        <img :src="item.imgUrl" alt="">
         <div class="info">
-          <p class="info-title">颐和园颐和园颐和园颐和园颐和园颐和园颐和园</p>
-          <p class="info-desc">美丽颐和园一日游美丽颐和园一日游美丽颐和园一日游</p>
-          <button class="info-btn">查看详情</button>
-        </div>
-      </li>
-      <li class="item">
-        <img src="https://imgs.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_200x200_2cce447f.jpg" alt="">
-        <div class="info">
-          <p class="info-title">颐和园颐和园颐和园颐和园颐和园颐和园颐和园</p>
-          <p class="info-desc">美丽颐和园一日游美丽颐和园一日游美丽颐和园一日游</p>
-          <button class="info-btn">查看详情</button>
-        </div>
-      </li>
-      <li class="item">
-        <img src="https://imgs.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_200x200_2cce447f.jpg" alt="">
-        <div class="info">
-          <p class="info-title">颐和园颐和园颐和园颐和园颐和园颐和园颐和园</p>
-          <p class="info-desc">美丽颐和园一日游美丽颐和园一日游美丽颐和园一日游</p>
+          <p class="info-title">{{item.title}}</p>
+          <p class="info-desc">{{item.price}}</p>
           <button class="info-btn">查看详情</button>
         </div>
       </li>
@@ -32,7 +16,10 @@
 
 <script>
 export default {
-  name: 'HomeHot'
+  name: 'HomeHot',
+  props: {
+    hotList: Array
+  }
 }
 </script>
 

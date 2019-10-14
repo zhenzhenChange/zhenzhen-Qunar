@@ -1,44 +1,10 @@
 <template>
   <div class="section">
     <swiper :options="swiperOption">
-      <swiper-slide>
-        <div class="icon">
-          <img src="@images/1.png" alt="">
-          <p>景点门票</p>
-        </div>
-        <div class="icon">
-          <img src="@images/2.png" alt="">
-          <p>桂林必游</p>
-        </div>
-        <div class="icon">
-          <img src="@images/3.png" alt="">
-          <p>游船</p>
-        </div>
-        <div class="icon">
-          <img src="@images/4.png" alt="">
-          <p>桂林千古情</p>
-        </div>
-        <div class="icon">
-          <img src="@images/5.png" alt="">
-          <p>亲子游</p>
-        </div>
-        <div class="icon">
-          <img src="@images/6.png" alt="">
-          <p>漂流</p>
-        </div>
-        <div class="icon">
-          <img src="@images/7.png" alt="">
-          <p>玻璃栈道</p>
-        </div>
-        <div class="icon">
-          <img src="@images/8.png" alt="">
-          <p>游船风光</p>
-        </div>
-      </swiper-slide>
-      <swiper-slide>
-        <div class="icon">
-          <img src="@images/9.png" alt="">
-          <p>文化古迹</p>
+      <swiper-slide v-for="(page,index) of pages" :key="index">
+        <div class="icon" v-for="item of page" :key="item.id">
+          <img :src="item.imgUrl" alt="">
+          <p>{{item.title}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -48,18 +14,20 @@
 <script>
 export default {
   name: 'HomeSection',
+  props: {
+    sectionList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      imgList: []
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.imgList.forEach((item, index) => {
+      this.sectionList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
