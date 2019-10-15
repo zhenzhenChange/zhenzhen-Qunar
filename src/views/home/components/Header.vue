@@ -6,9 +6,11 @@
     <div class="header-search">
       <span class="iconfont iconfont-search">&#xe631;</span>输入城市/景点/游玩主题
     </div>
-    <div class="header-city">
-      城市<span class="iconfont iconfont-city">&#xe60c;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-city">
+        城市<span class="iconfont iconfont-city">&#xe60c;</span>
+      </div>
+    </router-link>
   </header>
 </template>
 
@@ -21,13 +23,13 @@ export default {
 @import "~@css/global.styl"
 header
   display: flex
-  height: .86rem
-  line-height: .86rem
+  height: $rem86
+  line-height: $rem86
   background-color: $home-bgc
   color: $color-FFF
 
   .header-back
-    width: .86rem
+    width: $rem86
     text-align: center
     float: left
 
@@ -54,6 +56,7 @@ header
     width: 1.14rem
     text-align: center
     float: right
+    color: $color-FFF
 
     .iconfont-city
       margin-left: .1rem
