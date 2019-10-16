@@ -4,11 +4,11 @@
       <span class="iconfont iconfont-back">&#xe612;</span>
     </div>
     <div class="header-search">
-      <span class="iconfont iconfont-search">&#xe631;</span>输入城市/景点/游玩主题
+      <span class="iconfont iconfont-search">&#xe631;</span><span>输入城市/景点/游玩主题</span>
     </div>
     <router-link to="/city">
       <div class="header-city">
-        城市<span class="iconfont iconfont-city">&#xe60c;</span>
+        <span>城市</span><span class="iconfont iconfont-city">&#xe60c;</span>
       </div>
     </router-link>
   </header>
