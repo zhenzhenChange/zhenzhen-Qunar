@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul class="list">
-      <li class="item" v-for="(value,key) of cities" :key="key">{{key}}</li>
+      <li class="item" v-for="(value,key) of cities" :key="key" @click="tracking">{{key}}</li>
     </ul>
   </div>
 </template>
@@ -11,6 +11,11 @@ export default {
   name: 'CityAlphabet',
   props: {
     cities: Object
+  },
+  methods: {
+    tracking (e) {
+      this.$emit('changeLetter', e.target.innerHTML)
+    }
   }
 }
 </script>

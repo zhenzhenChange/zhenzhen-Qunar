@@ -8,15 +8,20 @@
     </div>
     <router-link to="/city">
       <div class="header-city">
-        <span>城市</span><span class="iconfont iconfont-city">&#xe60c;</span>
+        <span>{{this.city}}</span><span class="iconfont iconfont-city">&#xe60c;</span>
       </div>
     </router-link>
   </header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    ...mapState(['city'])
+  }
 }
 </script>
 <style lang="stylus" scoped>
@@ -53,7 +58,8 @@ header
       margin-right: .2rem;
 
   .header-city
-    width: 1.14rem
+    min-width: 1.04rem
+    padding: 0 .1rem
     text-align: center
     float: right
     color: $color-FFF

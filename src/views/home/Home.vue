@@ -15,6 +15,7 @@ import HomeSection from './components/Section'
 import HomeHot from './components/Hot'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -23,8 +24,12 @@ export default {
       swiperList: [],
       sectionList: [],
       hotList: [],
-      weekendList: []
+      weekendList: [],
+      lastCity: ''
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   components: {
     HomeHeader,
@@ -35,7 +40,7 @@ export default {
   },
   methods: {
     getHomeData () {
-      axios.get('/api/index.json').then((res) => {
+      axios.get(`/api/index.json?city=${this.city}`).then((res) => {
         let ret = res.data.ret
         let data = res.data.data
         if (ret && data) {
@@ -48,7 +53,14 @@ export default {
     }
   },
   mounted () {
+    this.lastCity = this.city
     this.getHomeData()
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeData()
+    }
   }
 }
 </script>
